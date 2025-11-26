@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #007bff;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Navigation Link */
+.nav-link.active {
+    font-weight: 600;
+    color: var(--primary-color) !important;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+    color: #212529;
+
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+
+/* Page Transitions */
+.page-view {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(10px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+
+
+/* Main Content Area */
+main {
+    min-height: calc(100vh - 200px);
+}
+
+/* Footer  */
+footer {
+    background-color: var(--light-bg);
+    border-top: 1px solid #ddd;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-link {
+    margin-left: 0;
+    padding: 0.5rem 0;
+    }
+
+    .jumbotron {
+    padding: 2rem 1rem;
+    }
+
+    .jumbotron h1 {
+    font-size: 1.75rem;
+    }
+
+    .card {
+    margin-bottom: 1rem;
+    }
+
+}
