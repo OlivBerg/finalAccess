@@ -15,7 +15,7 @@ function navigateTo(page) {
       heading.setAttribute("tabindex", "-1");
       heading.focus();
     }
-  }
+  
 
   updatePageTitle(page);
   updateActiveNavLink(page);

@@ -76,6 +76,13 @@ footer {
     color: #666;
 }
 
+.service-icon {
+  float: right;
+  width: 90px;
+  height: auto;
+  margin: 10px 0 10px 20px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .nav-link {
@@ -94,5 +101,12 @@ footer {
     .card {
     margin-bottom: 1rem;
     }
+
+
+/* Visible keyboard focus for WCAG 2.4.7 */
+:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
 
 }
