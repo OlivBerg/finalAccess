@@ -99,46 +99,50 @@
         form below and we’ll get back to you as soon as we can to schedule a
         call with our sales team!
       </p>
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="businessName" class="col-form-label">Business name</label>
+      <form>
+        <div class="form-group">
+          <label for="businessName">Business name</label>
+          <input type="text" class="col-auto" id="businessName">
         </div>
-        <div class="col-auto">
-          <input type="text" id="businessName" class="form-control" aria-describedby="nameHelpLine">
-        </div>
-        <div class="col-auto">
-          <span id="nameHelpLine" class="form-text">
-            Must be 8-20 characters long.
-          </span>
-        </div>
-      </div>
 
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="phoneNumber" class="col-form-label">Phone number (613-123-1234)</label>
+        <div class="form-group">
+          <label for="phoneNumber">Phone number</label>
+          <input type="tel" class="col-auto" id="phoneNumber" placeholder="613-123-1234">
         </div>
-        <div class="col-auto">
-          <input type="tel" id="phoneNumber" class="form-control" aria-describedby="numberHelpLine">
-        </div>
-        <div class="col-auto">
-          <span id="numberHelpLine" class="form-text">
-          </span>
-        </div>
-      </div>
 
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="email" class="col-form-label">Email (required)</label>
+        <div class="form-group">
+          <label for="emailAddress">Email (required)</label>
+          <input type="email" class="col-auto" id="emailAddress" placeholder="you@example.com" required>
         </div>
-        <div class="col-auto">
-          <input type="text" id="email" class="form-control" aria-describedby="emailHelpLine">
-        </div>
-        <div class="col-auto">
-          <span id="emailHelpLine" class="form-text">
-          </span>
-        </div>
-      </div>
 
+        <div class="mt-3">
+          <h5>What would you like to talk about</h5>
+
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">
+              Awareness lab days and workshops
+            </label>
+          </div>
+
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <label class="custom-control-label" for="customCheck2">
+              Invite a speaker with disabilities to your event
+            </label>
+          </div>
+
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck3">
+            <label class="custom-control-label" for="customCheck3">
+              Usability testing
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Schedule a call</button>
+      </form>
+    </div>
   </main>
 
   <footer class="container">
