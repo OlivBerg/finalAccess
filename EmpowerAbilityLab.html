@@ -12,7 +12,7 @@
   <title>Home</title>
 </head>
 
-<body class="p-3 m-0 border-0 m-0 border-0">
+<body class="p-3">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img src="images/empowerabilitylabslogo.png" alt="Empower Ability Labs Logo" width="150"
@@ -38,7 +38,7 @@
       </ul>
     </div>
   </nav>
-  <main class="mt-5">
+  <main class="mt-5 mb-5 ">
     <!-- home page  -->
     <div id="home-view" class="page-view">
       <h1>Welcome to Empower Ability Labs!</h1>
@@ -91,27 +91,30 @@
     </div>
 
     <!-- schedule a call page -->
-    <div id="schedule-view" class="page-view" style="display: none" role="region" aria-labelledby="scheduleCallHeading">
-      <header class="row align-items-center mb-3" role="group" aria-labelledby="scheduleCallHeading">
-        <div class="col-12">
-          <h1 id="scheduleCallHeading">Schedule a call</h1>
-        </div>
+    <div id="schedule-view" class="page-view container" role="region" aria-labelledby="scheduleCallHeading">
+      <header class="mb-4" role="group" aria-labelledby="scheduleCallHeading">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+          <div class="text-left">
+            <h1 id="scheduleCallHeading" class="h3 mb-1">Schedule a call</h1>
+            <p id="scheduleIntro" class="mb-0">
+              At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through
+              immersive experiences. Fill out the form below and we'll get back to you as soon as we can to schedule a
+              call with our sales team!
+            </p>
+          </div>
 
-        <div class="col-12 col-md-8">
-          <p id="scheduleIntro">
-            At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through
-            immersive experiences. Fill out the form below and we’ll get back to you as soon as we can to schedule a
-            call with our sales team!
-          </p>
+          <div class="ml-md-3 text-center" aria-hidden="true">
+            <img src="images/scheduleacall.png" alt="" class="hide-on-portrait">
+          </div>
         </div>
-
-        <figure class="col-12 col-md-4 text-center mb-0 hide-on-portrait" aria-hidden="true">
-          <img src="images/scheduleacall.png" alt="" class="img-fluid" aria-hidden="true" />
-        </figure>
       </header>
 
+      <!-- Alert Message -->
+      <div id="formMessage" class="alert alert-danger alert-dismissible fade" role="alert" style="display: none;">
+        <span id="messageText"></span>
+      </div>
 
-      <form aria-describedby="scheduleFormDesc">
+      <form id="scheduleForm" aria-describedby="scheduleFormDesc" novalidate>
         <p id="scheduleFormDesc" class="sr-only">
           Complete the following fields to schedule a call.
         </p>
@@ -119,21 +122,21 @@
         <!-- Business Name -->
         <div class="form-group">
           <label for="businessName">Business name</label>
-          <input type="text" class="col-auto" id="businessName" name="businessName" autocomplete="organization">
+          <input type="text" class="form-control" id="businessName" name="businessName" autocomplete="organization">
         </div>
 
         <!-- Phone Number -->
         <div class="form-group">
-          <label for="phoneNumber">Phone number (613-123-1234)</label>
-          <input type="tel" class="col-auto" id="phoneNumber" name="phoneNumber" autocomplete="tel"
-            aria-describedby="phoneFormat">
-          <span id="phoneFormat" class="sr-only">Use numeric format 613 dash 123 dash 1234</span>
+          <label for="phoneNumber">Phone number</label>
+          <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" autocomplete="tel"
+            aria-describedby="phoneFormat" placeholder="613-123-1234">
+          <small id="phoneFormat" class="form-text text-muted">Format: 613-123-1234 or (613) 123-1234</small>
         </div>
 
         <!-- Email -->
         <div class="form-group">
-          <label for="emailAddress">Email <span aria-hidden="true">(required)</span></label>
-          <input type="email" class="col-auto" id="emailAddress" name="emailAddress" required autocomplete="email"
+          <label for="emailAddress">Email <span aria-hidden="true">*</span></label>
+          <input type="email" class="form-control" id="emailAddress" name="emailAddress" required autocomplete="email"
             aria-required="true" placeholder="you@example.com">
         </div>
 
@@ -186,7 +189,6 @@
           </label>
         </div>
 
-
         <!-- Submit Button -->
         <button type="submit" id="callForm" class="btn btn-primary mt-3">
           Schedule a call
@@ -196,7 +198,7 @@
     </div>
 
 
-    <footer class="container">
+    <footer class="p-3">
       <p>Copyright Accessible Knowledge Base 2023</p>
     </footer>
 
