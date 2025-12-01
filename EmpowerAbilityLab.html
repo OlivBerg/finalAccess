@@ -91,85 +91,115 @@
     </div>
 
     <!-- schedule a call page -->
-    <div id="schedule-view" class="page-view" style="display: none">
-      <h1>Schedule a call</h1>
+    <div id="schedule-view" class="page-view" style="display: none" role="region" aria-labelledby="scheduleCallHeading">
+      <h1 id="scheduleCallHeading">Schedule a call</h1>
+
       <p>
         At Empower Ability Labs, we are dedicated to cultivating empathy and
         driving positive change through immersive experiences. Fill out the
         form below and we’ll get back to you as soon as we can to schedule a
         call with our sales team!
       </p>
-      <form>
+
+      <form aria-describedby="scheduleFormDesc">
+        <p id="scheduleFormDesc" class="sr-only">
+          Complete the following fields to schedule a call.
+        </p>
+
+        <!-- Business Name -->
         <div class="form-group">
           <label for="businessName">Business name</label>
-          <input type="text" class="col-auto" id="businessName">
+          <input type="text" class="col-auto" id="businessName" name="businessName" autocomplete="organization">
         </div>
 
+        <!-- Phone Number -->
         <div class="form-group">
-          <label for="phoneNumber">Phone number</label>
-          <input type="tel" class="col-auto" id="phoneNumber" placeholder="613-123-1234">
+          <label for="phoneNumber">Phone number (613-123-1234)</label>
+          <input type="tel" class="col-auto" id="phoneNumber" name="phoneNumber" autocomplete="tel"
+            aria-describedby="phoneFormat">
+          <span id="phoneFormat" class="sr-only">Use numeric format 613 dash 123 dash 1234</span>
         </div>
 
+        <!-- Email -->
         <div class="form-group">
-          <label for="emailAddress">Email (required)</label>
-          <input type="email" class="col-auto" id="emailAddress" placeholder="you@example.com" required>
+          <label for="emailAddress">Email <span aria-hidden="true">(required)</span></label>
+          <input type="email" class="col-auto" id="emailAddress" name="emailAddress" required autocomplete="email"
+            aria-required="true" placeholder="you@example.com">
         </div>
 
-        <div class="mt-3">
-          <h5>What would you like to talk about</h5>
+        <!-- Interest Options -->
+        <fieldset class="mt-3" aria-labelledby="interestLegend">
+          <legend id="interestLegend">What would you like to talk about</legend>
 
+          <!-- Awareness Lab -->
           <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <input type="checkbox" class="custom-control-input" id="customCheck1" name="topics" value="awareness-labs">
             <label class="custom-control-label" for="customCheck1">
               Awareness lab days and workshops
             </label>
           </div>
 
+          <!-- Invite a Speaker -->
           <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <input type="checkbox" class="custom-control-input" id="customCheck2" name="topics" value="speaker"
+              aria-controls="speakerDetails" aria-expanded="false">
             <label class="custom-control-label" for="customCheck2">
               Invite a speaker with disabilities to your event
             </label>
           </div>
 
-          <!-- Hidden textarea initially -->
-          <div id="speakerDetails" style="display: none;" class="mt-2">
+          <!-- Speaker Textarea (hidden) -->
+          <div id="speakerDetails" class="mt-2" style="display: none;" aria-hidden="true">
             <label for="speakerInfo">Tell us about your event</label>
-            <textarea id="speakerInfo" class="form-control" rows="4"></textarea>
+            <textarea id="speakerInfo" name="speakerInfo" class="form-control" rows="4"></textarea>
           </div>
 
+          <!-- Usability Testing -->
           <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck3">
+            <input type="checkbox" class="custom-control-input" id="customCheck3" name="topics"
+              value="usability-testing">
             <label class="custom-control-label" for="customCheck3">
               Usability testing
             </label>
           </div>
 
-          <!-- Custom Switch -->
-          <div class="d-flex align-items-center mb-2">
-            <label class="switch mb-0">
-              <input type="checkbox" id="defaultCheck1">
-              <span class="slider"></span>
-            </label>
-            <span class="ml-2">Receive emails about updates and services </span>
-          </div>
-          <button id="callForm" type="submit" class="btn btn-primary mt-3">Schedule a call</button>
-  </main>
+        </fieldset>
 
-  <footer class="container">
-    <p>Copyright Accessible Knowledge Base 2023</p>
-  </footer>
+        <div class="mt-4 mb-4 d-flex align-items-center">
+          <label class="switch mb-0">
+            <input type="checkbox" id="defaultCheck1" name="updatesOptIn" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </label>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="EmpowerAbilityLab.js"></script>
+          <label for="defaultCheck1" class="ml-2">
+            Receive emails about updates and services
+          </label>
+        </div>
+
+
+        <!-- Submit Button -->
+        <button type="submit" id="callForm" class="btn btn-primary mt-3">
+          Schedule a call
+        </button>
+
+      </form>
+    </div>
+
+
+    <footer class="container">
+      <p>Copyright Accessible Knowledge Base 2023</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="EmpowerAbilityLab.js"></script>
 </body>
 
 </html>
