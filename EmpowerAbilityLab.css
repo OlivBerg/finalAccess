@@ -1,175 +1,175 @@
 :root {
-    --primary-color: #004794;
-    --dark-bg: #212529;
-    --light-bg: #f8f9fa;
+  --primary-color: #004794;
+  --dark-bg: #212529;
+  --light-bg: #f8f9fa;
 }
 
 body {
-    color: #333;
+  color: #333;
 }
 
 /* Navbar Styles */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .navbar-brand img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 
 /* Navigation Link */
 .nav-link.active {
-    font-weight: 600;
-    color: var(--primary-color) !important;
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color) !important;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
 }
 
 .nav-link {
-    transition: all 0.3s ease;
-    margin-left: 1rem;
-    color: #212529;
-
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  color: #212529;
 }
 
 .nav-link:hover {
-    color: var(--primary-color) !important;
-    transform: translateY(-2px);
+  color: var(--primary-color) !important;
+  transform: translateY(-2px);
 }
-
 
 /* Page Transitions */
 .page-view {
-    animation: fadeIn 0.3s ease-in;
+  animation: fadeIn 0.3s ease-in;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
 
 /* Main Content Area */
 main {
-    min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
 }
 
 /* Footer  */
 footer {
-    background-color: var(--light-bg);
-    border-top: 1px solid #ddd;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-    text-align: center;
-    color: #666;
+  background-color: var(--light-bg);
+  border-top: 1px solid #ddd;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: #666;
 }
 
 /* Custom Toggle Switch with ON/OFF labels */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 28px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
 }
 
 .switch input {
-    position: absolute;
-    /* take it out of normal flow */
-    opacity: 0;
-    /* make it invisible */
-    width: 0;
-    height: 0;
-    margin: 0;
+  position: absolute;
+  /* take it out of normal flow */
+  opacity: 0;
+  /* make it invisible */
+  width: 0;
+  height: 0;
+  margin: 0;
 }
 
 /* Focus styles for accessibility */
-.switch input:focus+.slider {
-    box-shadow: 0 0 0 3px rgba(0, 71, 148, 0.4);
-    /* highlight ring using your primary color */
-    outline: none;
-    /* remove default outline */
+.switch input:focus + .slider {
+  box-shadow: 0 0 0 3px rgba(0, 71, 148, 0.4);
+  /* highlight ring using your primary color */
+  outline: none;
+  /* remove default outline */
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 28px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 28px;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 22px;
-    width: 22px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
 /* ON state */
-input:checked+.slider {
-    background-color: green;
+input:checked + .slider {
+  background-color: green;
 }
 
-input:checked+.slider:before {
-    transform: translateX(32px);
+input:checked + .slider:before {
+  transform: translateX(32px);
 }
 
 /* Add ON/OFF text */
 .slider:after {
-    content: "OFF";
-    color: white;
-    font-size: 12px;
-    position: absolute;
-    right: 8px;
-    top: 6px;
+  content: "OFF";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  right: 8px;
+  top: 6px;
 }
 
-input:checked+.slider:after {
-    content: "ON";
-    left: 8px;
-    right: auto;
+input:checked + .slider:after {
+  content: "ON";
+  left: 8px;
+  right: auto;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .nav-link {
-        margin-left: 0;
-        padding: 0.5rem 0;
-    }
+  .nav-link {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
 
-    .jumbotron {
-        padding: 2rem 1rem;
-    }
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
 
-    .jumbotron h1 {
-        font-size: 1.75rem;
-    }
+  .jumbotron h1 {
+    font-size: 1.75rem;
+  }
 
-    .card {
-        margin-bottom: 1rem;
-    }
+  .card {
+    margin-bottom: 1rem;
+  }
+}
 
-
+/* Removes decorative image on portrait orientation  */
+@media (orientation: portrait) {
+  .hide-on-portrait {
+    display: none !important;
+  }
 }
