@@ -132,17 +132,28 @@
             </label>
           </div>
 
+          <!-- Hidden textarea initially -->
+          <div id="speakerDetails" style="display: none;" class="mt-2">
+            <label for="speakerInfo">Tell us about your event</label>
+            <textarea id="speakerInfo" class="form-control" rows="4"></textarea>
+          </div>
+
           <div class="custom-control custom-checkbox mb-2">
             <input type="checkbox" class="custom-control-input" id="customCheck3">
             <label class="custom-control-label" for="customCheck3">
               Usability testing
             </label>
           </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary mt-3">Schedule a call</button>
-      </form>
-    </div>
+          <!-- Custom Switch -->
+          <div class="d-flex align-items-center mb-2">
+            <label class="switch mb-0">
+              <input type="checkbox" id="defaultCheck1">
+              <span class="slider"></span>
+            </label>
+            <span class="ml-2">Receive emails about updates and services </span>
+          </div>
+          <button id="callForm" type="submit" class="btn btn-primary mt-3">Schedule a call</button>
   </main>
 
   <footer class="container">

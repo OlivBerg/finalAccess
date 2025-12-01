@@ -32,6 +32,15 @@ function updatePageTitle(page) {
   document.title = title;
 }
 
+document.getElementById('customCheck2').addEventListener('change', function () {
+  const textareaDiv = document.getElementById('speakerDetails');
+  if (this.checked) {
+    textareaDiv.style.display = 'block';  // show textarea
+  } else {
+    textareaDiv.style.display = 'none';   // hide textarea
+  }
+});
+
 function updateActiveNavLink(page) {
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.remove("active");
