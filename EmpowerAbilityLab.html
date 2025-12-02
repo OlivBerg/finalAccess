@@ -113,93 +113,10 @@
       <div id="formMessage" class="alert alert-danger alert-dismissible fade" role="alert" style="display: none;">
         <span id="messageText"></span>
       </div>
+    </main>
 
-      <form id="scheduleForm" aria-describedby="scheduleFormDesc" novalidate>
-        <p id="scheduleFormDesc" class="sr-only">
-          Complete the following fields to schedule a call.
-        </p>
-
-        <!-- Business Name -->
-        <div class="form-group">
-          <label for="businessName">Business name</label>
-          <input type="text" class="form-control" id="businessName" name="businessName" autocomplete="organization">
-        </div>
-
-        <!-- Phone Number -->
-        <div class="form-group">
-          <label for="phoneNumber">Phone number</label>
-          <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" autocomplete="tel"
-            aria-describedby="phoneFormat" placeholder="613-123-1234">
-          <small id="phoneFormat" class="form-text text-muted">Format: 613-123-1234 or (613) 123-1234</small>
-        </div>
-
-        <!-- Email -->
-        <div class="form-group">
-          <label for="emailAddress">Email <span aria-hidden="true">*</span></label>
-          <input type="email" class="form-control" id="emailAddress" name="emailAddress" required autocomplete="email"
-            aria-required="true" placeholder="you@example.com">
-        </div>
-
-        <!-- Interest Options -->
-        <fieldset class="mt-3" aria-labelledby="interestLegend">
-          <legend id="interestLegend">What would you like to talk about</legend>
-
-          <!-- Awareness Lab -->
-          <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck1" name="topics" value="awareness-labs">
-            <label class="custom-control-label" for="customCheck1">
-              Awareness lab days and workshops
-            </label>
-          </div>
-
-          <!-- Invite a Speaker -->
-          <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck2" name="topics" value="speaker"
-              aria-controls="speakerDetails" aria-expanded="false">
-            <label class="custom-control-label" for="customCheck2">
-              Invite a speaker with disabilities to your event
-            </label>
-          </div>
-
-          <!-- Speaker Textarea (hidden) -->
-          <div id="speakerDetails" class="mt-2" style="display: none;" aria-hidden="true">
-            <label for="speakerInfo">Tell us about your event</label>
-            <textarea id="speakerInfo" name="speakerInfo" class="form-control" rows="4"></textarea>
-          </div>
-
-          <!-- Usability Testing -->
-          <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck3" name="topics"
-              value="usability-testing">
-            <label class="custom-control-label" for="customCheck3">
-              Usability testing
-            </label>
-          </div>
-
-        </fieldset>
-
-        <div class="mt-4 mb-4 d-flex align-items-center">
-          <label class="switch mb-0">
-            <input type="checkbox" id="defaultCheck1" name="updatesOptIn" role="switch" aria-checked="false">
-            <span class="slider"></span>
-          </label>
-
-          <label for="defaultCheck1" class="ml-2">
-            Receive emails about updates and services
-          </label>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" id="callForm" class="btn btn-primary mt-3">
-          Schedule a call
-        </button>
-
-      </form>
-    </div>
-
-
-    <footer class="p-3">
-      <p>Copyright Accessible Knowledge Base 2023</p>
+    <footer class="container">
+      <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
