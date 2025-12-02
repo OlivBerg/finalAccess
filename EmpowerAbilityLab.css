@@ -8,6 +8,14 @@ body {
   color: #333;
 }
 
+.main-link {
+    color: #006ee5;
+}
+
+.col-sm {
+    margin-top: 2rem;
+}
+
 /* Navbar Styles */
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
