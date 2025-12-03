@@ -9,14 +9,6 @@ function navigateTo(page) {
     viewElement.style.display = "block";
   }
 
-  // Moves focus to the main heading for accessibility 
-  const heading = viewElement.querySelector("h1");
-    if (heading) {
-      heading.setAttribute("tabindex", "-1");
-      heading.focus();
-    }
-  
-
   updatePageTitle(page);
   updateActiveNavLink(page);
   window.scrollTo(0, 0);
