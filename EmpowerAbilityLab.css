@@ -181,3 +181,21 @@ input:checked + .slider:after {
     display: none !important;
   }
 }
+/* Services page illustration */
+.services-illustration {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+}
+
+#services-view {
+    padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-illustration {
+    margin-top: 20px;
+  }
+}
+
+
