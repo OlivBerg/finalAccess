@@ -40,7 +40,8 @@ body {
 .nav-link {
   transition: all 0.3s ease;
   margin-left: 1rem;
-  color: #212529;
+  color: #000000 !important;
+
 }
 
 .nav-link:hover {
