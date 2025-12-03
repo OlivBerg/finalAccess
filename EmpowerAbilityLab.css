@@ -181,20 +181,18 @@ input:checked + .slider:after {
     display: none !important;
   }
 }
-/* Services page illustration */
+/* Services image sizing */
 .services-illustration {
   max-width: 220px;
   width: 100%;
   height: auto;
+  margin-left: 1rem; /* matches schedule image */
 }
 
-#services-view {
-    padding-right: 2rem;
-}
-
+/* Remove top spacing on desktop */
 @media (min-width: 768px) {
   .services-illustration {
-    margin-top: 20px;
+    margin-top: 0;
   }
 }
 
