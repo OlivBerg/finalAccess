@@ -83,16 +83,20 @@ main {
 
 .switch input {
   position: absolute;
-  /* take it out of normal flow */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  /* make it invisible */
-  width: 0;
-  height: 0;
+  /* invisible */
   margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  /* sits ABOVE the slider so it receives the click */
 }
 
 /* Focus styles for accessibility */
-.switch input:focus + .slider {
+.switch input:focus+.slider {
   box-shadow: 0 0 0 3px rgba(0, 71, 148, 0.4);
   /* highlight ring using your primary color */
   outline: none;
@@ -124,11 +128,11 @@ main {
 }
 
 /* ON state */
-input:checked + .slider {
+input:checked+.slider {
   background-color: green;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(32px);
 }
 
@@ -142,7 +146,7 @@ input:checked + .slider:before {
   top: 6px;
 }
 
-input:checked + .slider:after {
+input:checked+.slider:after {
   content: "ON";
   left: 8px;
   right: auto;
@@ -166,12 +170,14 @@ input:checked + .slider:after {
     display: none !important;
   }
 }
+
 /* Services image sizing */
 .services-illustration {
   max-width: 250px;
   width: 100%;
   height: auto;
-  margin-left: 1rem; /* matches schedule image */
+  margin-left: 1rem;
+  /* matches schedule image */
 }
 
 /* Remove top spacing on desktop */
