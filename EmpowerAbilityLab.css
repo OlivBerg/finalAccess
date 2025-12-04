@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 /* Main Content Area */
 main {
   flex: 1;
@@ -185,6 +186,13 @@ input:checked+.slider:after {
   .services-illustration {
     margin-top: 0;
   }
+}
+
+#callForm {
+  background-color: #0069d9;
+  /* darker blue for contrast */
+  color: #fff;
+  /* white text */
 }
 
 footer {
