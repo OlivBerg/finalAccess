@@ -1,19 +1,4 @@
 // SPA Navigation Function
-function navigateTo(page) {
-  document.querySelectorAll(".page-view").forEach((view) => {
-    view.style.display = "none";
-  });
-
-  const viewElement = document.getElementById(page + "-view");
-  if (viewElement) {
-    viewElement.style.display = "block";
-  }
-
-  updatePageTitle(page);
-  updateActiveNavLink(page);
-  window.scrollTo(0, 0);
-}
-
 function updatePageTitle(page) {
   let title = "Empower Ability Labs";
   switch (page) {
@@ -26,20 +11,9 @@ function updatePageTitle(page) {
     case "schedule":
       title = "Schedule a Call | Empower Ability Labs";
       break;
-    default:
-      break;
   }
   document.title = title;
 }
-
-document.getElementById("customCheck2").addEventListener("change", function () {
-  const textareaDiv = document.getElementById("speakerDetails");
-  if (this.checked) {
-    textareaDiv.style.display = "block"; // show textarea
-  } else {
-    textareaDiv.style.display = "none"; // hide textarea
-  }
-});
 
 function updateActiveNavLink(page) {
   document.querySelectorAll(".nav-link").forEach((link) => {
@@ -52,8 +26,49 @@ function updateActiveNavLink(page) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  navigateTo("home");
+function showPage(page) {
+  // Show only the requested view
+  document.querySelectorAll(".page-view").forEach((view) => {
+    view.style.display = "none";
+  });
+
+  const pageView = document.getElementById(`${page}-view`);
+  if (pageView) {
+    pageView.style.display = "block";
+  }
+
+  updatePageTitle(page);
+  updateActiveNavLink(page);
+}
+
+// Navigate to a given "page"
+function navigateTo(page) {
+  showPage(page);
+
+  // Push state into history, Back/Forward
+  history.pushState({ page }, "", `#${page}`);
+}
+
+// Handle browser Back/Forward navigation
+window.addEventListener("popstate", (event) => {
+  const state = event.state;
+  const page = state ? state.page : "home";
+  showPage(page);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const initialPage = location.hash.replace("#", "") || "home";
+  showPage(initialPage);
+  history.replaceState({ page: initialPage }, "", `#${initialPage}`);
+
+  // Checkbox toggle behavior
+  const speakerCheckbox = document.getElementById("customCheck2");
+  if (speakerCheckbox) {
+    speakerCheckbox.addEventListener("change", function () {
+      const textareaDiv = document.getElementById("speakerDetails");
+      textareaDiv.style.display = this.checked ? "block" : "none";
+    });
+  }
 });
 
 // Validation and Submission
