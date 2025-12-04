@@ -270,13 +270,16 @@
 
         </fieldset>
 
-        <div class="mt-4 mb-4 d-flex align-items-center">
-          <label class="switch mb-0">
-            <input type="checkbox" id="defaultCheck1" name="updatesOptIn" role="switch" aria-checked="false">
+        <div class="form-group d-flex align-items-center mb-4">
+          <!-- Visual switch wrapper (NOT a label) -->
+          <div class="switch mb-0">
+            <input type="checkbox" id="defaultCheck1" name="updatesOptIn" role="switch" aria-checked="false"
+              aria-labelledby="updatesLabel">
             <span class="slider"></span>
-          </label>
+          </div>
 
-          <label for="defaultCheck1" class="ml-2">
+          <!-- The ONLY label for this control -->
+          <label id="updatesLabel" class="ml-3 mb-0" for="defaultCheck1">
             Receive emails about updates and services
           </label>
         </div>
