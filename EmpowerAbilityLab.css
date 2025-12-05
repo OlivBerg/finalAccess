@@ -195,7 +195,7 @@ input:checked + .slider:after {
 }
 
 .btn:hover {
-  background-color: #00000025;
+  background-color: #e3e3e3;
   /* darker blue for contrast */
   color: #000000;
   /* white text */
