@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #004794;
+  --primary-color: #00254d;
   --dark-bg: #212529;
   --light-bg: #f8f9fa;
 }
@@ -49,7 +49,6 @@ main {
   transition: all 0.3s ease;
   margin-left: 1rem;
   color: #000000 !important;
-
 }
 
 .nav-link:hover {
@@ -97,7 +96,7 @@ main {
 }
 
 /* Focus styles for accessibility */
-.switch input:focus+.slider {
+.switch input:focus + .slider {
   box-shadow: 0 0 0 3px rgba(0, 71, 148, 0.4);
   /* highlight ring using your primary color */
   outline: none;
@@ -129,11 +128,11 @@ main {
 }
 
 /* ON state */
-input:checked+.slider {
+input:checked + .slider {
   background-color: green;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(32px);
 }
 
@@ -147,7 +146,7 @@ input:checked+.slider:before {
   top: 6px;
 }
 
-input:checked+.slider:after {
+input:checked + .slider:after {
   content: "ON";
   left: 8px;
   right: auto;
@@ -188,17 +187,17 @@ input:checked+.slider:after {
   }
 }
 
-#btn {
-  background-color: #0069d9;
+.btn {
+  background-color: #000000;
   /* darker blue for contrast */
-  color: #fff;
+  color: #ffffff;
   /* white text */
 }
 
-#callForm {
-  background-color: #0069d9;
+.btn:hover {
+  background-color: #00000025;
   /* darker blue for contrast */
-  color: #fff;
+  color: #000000;
   /* white text */
 }
 
