@@ -23,6 +23,7 @@ function updateActiveNavLink(page) {
   const activeLink = document.querySelector(`[data-page="${page}"]`);
   if (activeLink) {
     activeLink.classList.add("active");
+    activeLink.setAttribute("aria-current", "page"); //  Accessibility Fix
   }
 }
 
@@ -30,11 +31,20 @@ function showPage(page) {
   // Show only the requested view
   document.querySelectorAll(".page-view").forEach((view) => {
     view.style.display = "none";
+    view.setAttribute("aria-hidden", "true"); //  Accessibility Fix (hide inactive views)
   });
 
   const pageView = document.getElementById(`${page}-view`);
   if (pageView) {
     pageView.style.display = "block";
+    pageView.setAttribute("aria-hidden", "false"); //  Accessibility Fix
+
+    // Move focus to the view’s <h1> for WCAG 2.1.1 + 2.4.3
+    const heading = pageView.querySelector("h1");
+    if (heading) {
+      heading.setAttribute("tabindex", "-1");
+      heading.focus();
+    }
   }
 
   updatePageTitle(page);
@@ -67,6 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     speakerCheckbox.addEventListener("change", function () {
       const textareaDiv = document.getElementById("speakerDetails");
       textareaDiv.style.display = this.checked ? "block" : "none";
+
+      // Correct ARIA state sync for disclosure pattern
+      speakerCheckbox.setAttribute("aria-expanded", this.checked ? "true" : "false");
     });
   }
 });
@@ -83,6 +96,9 @@ document
     const messageDiv = document.getElementById("formMessage");
     const messageText = document.getElementById("messageText");
 
+    // Add aria-live="assertive" to error region 
+    messageDiv.setAttribute("aria-live", "assertive");
+
     // Reset message
     messageDiv.style.display = "none";
     messageDiv.classList.remove("alert-danger", "alert-success");
@@ -95,15 +111,13 @@ document
     if (!email) {
       errors.push("Email is required.");
     } else if (!emailRegex.test(email)) {
-      errors.push(
-        "Please enter a valid email address (e.g., you@example.com)."
-      );
+      errors.push("Please enter a valid email address (e.g., you@example.com).");
     }
 
-    // Phone validation
+    //  Phone number validation pattern 
     if (phone) {
       const phoneRegex =
-        /^(\d{3}[-.\s]?\d{3}[-.\s]?\d{4}|\(\d{3}\)\s?\d{3}[-.\s]?\d{4})$/;
+        /^(\+?1\s?)?(\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}$/;
       if (!phoneRegex.test(phone)) {
         errors.push(
           "Phone number must be in format: 613-123-1234 or (613) 123-1234."
